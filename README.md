@@ -48,7 +48,7 @@ The project is organized into several Django applications:
  Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/arindamss/Track-Your-Class.git
   ```
  Install dependencies:
  
