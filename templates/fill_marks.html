@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks</title>
+</head>
+<body>
+    <h3>Department : {{dept}} </h3>
+    <h4>Semester : {{sem.semester}}</h4>
+    <form method="post">
+        {% csrf_token %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name  </th>
+                <th>Registraction Number </th>
+                <th>Semester </th>
+                <th>Student Type</th>
+            </tr>
+        </thead>
+        {% for s in students  %}
+        <tr>
+            <td>{{s.first_name}}  {{s.last_name}}</td>
+            <td>{{s.registration_number}}</td>
+            <td>{{semester.semester}}</td>
+            <td>{{s.student_type}}</td>
+            <td><input type="text" name="{{s.registrationNum}}" placeholder="Enter Number"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Lock Marks</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice</title>
+</head>
+<body>
+    <h2>Notices:</h2>
+    <ul>
+        {% for notice in notice %}
+            <li>
+                <h3>{{ notice.title }}</h3>
+                <p>{{ notice.description }}</p>
+                <a href="{{ notice.pdf_file.url }}" download>Download PDF</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

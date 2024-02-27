@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    
+    <h2>Notices:</h2>
+    <ul>
+        {% for notice in notice %}
+            <li>
+                <h3>{{ notice.title }}</h3>
+                <p>{{ notice.description }}</p>
+                <a href="{{ notice.pdf_file.url }}" download>Download PDF</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- <ul>
+        {% for notice in notices %}
+        <li>
+        <h2>{{ notice.title }}</h2>
+        <p>{{ notice.description }}</p>
+        <a href="{{ notice.pdf_file }}" target="_blank">View PDF</a>
+        </li>
+        {% endfor %}
+
+    </ul> -->
+
+    <h1>I am ready for Action!</h1>
+    <h3><a href={% url "adminlogin" %}>Admin Login</a></h3>
+    <h3><a href={% url "teacherlogin" %}>Teacher Login</a></h3>
+    <h3><a href={% url "studentlogin" %}>Student Login</a></h3>
+</body>
+</html>

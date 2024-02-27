@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Register User</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        {% for field in form%}
+            {{field.label}} <br>
+            {{field}} <br>
+            {{field.error}} <br>
+        {% endfor %}
+
+        {% comment %} {{form.as_p}} {% endcomment %}
+
+        <input type="submit" value="submit" name="create_user">
+
+    </form>
+</body>
+</html>

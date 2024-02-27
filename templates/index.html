@@ -1,0 +1,609 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content />
+    <meta name="keywords" content />
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Muli:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/static/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/static/css/aos.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Track-Your-Class | Home</title>
+    <script
+        nonce="5ae1d141-fcbb-4f20-a233-3631860cb75d">try { (function (w, d) { !function (j, k, l, m) { j[l] = j[l] || {}; j[l].executed = []; j.zaraz = { deferred: [], listeners: [] }; j.zaraz.q = []; j.zaraz._f = function (n) { return async function () { var o = Array.prototype.slice.call(arguments); j.zaraz.q.push({ m: n, a: o }) } }; for (const p of ["track", "set", "debug"]) j.zaraz[p] = j.zaraz._f(p); j.zaraz.init = () => { var q = k.getElementsByTagName(m)[0], r = k.createElement(m), s = k.getElementsByTagName("title")[0]; s && (j[l].t = k.getElementsByTagName("title")[0].text); j[l].x = Math.random(); j[l].w = j.screen.width; j[l].h = j.screen.height; j[l].j = j.innerHeight; j[l].e = j.innerWidth; j[l].l = j.location.href; j[l].r = k.referrer; j[l].k = j.screen.colorDepth; j[l].n = k.characterSet; j[l].o = (new Date).getTimezoneOffset(); if (j.dataLayer) for (const w of Object.entries(Object.entries(dataLayer).reduce(((x, y) => ({ ...x[1], ...y[1] })), {}))) zaraz.set(w[0], w[1], { scope: "page" }); j[l].q = []; for (; j.zaraz.q.length;) { const z = j.zaraz.q.shift(); j[l].q.push(z) } r.defer = !0; for (const A of [localStorage, sessionStorage]) Object.keys(A || {}).filter((C => C.startsWith("_zaraz_"))).forEach((B => { try { j[l]["z_" + B.slice(7)] = JSON.parse(A.getItem(B)) } catch { j[l]["z_" + B.slice(7)] = A.getItem(B) } })); r.referrerPolicy = "origin"; r.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(j[l]))); q.parentNode.insertBefore(r, q) };["complete", "interactive"].includes(k.readyState) ? zaraz.init() : j.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document) } catch (e) { throw fetch("/cdn-cgi/zaraz/t"), e; };</script>
+</head>
+
+<body>
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav mb-5">
+        <div class="pb-2 top-bar mb-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6 col-lg-9">
+                        <a href="#" class="small mr-3" style="text-decoration: none;"><span class="icon-question-circle-o mr-2" ></span> <span
+                                class="d-none d-lg-inline-block">Have a questions?</span></a>
+                        <a href="#" class="small mr-3" style="text-decoration: none;"><span class="icon-phone mr-2"></span> <span
+                                class="d-none d-lg-inline-block">10 20 123 456</span></a>
+                        <a href="#" class="small mr-3" style="text-decoration: none;"><span class="icon-envelope mr-2"></span> <span
+                                class="d-none d-lg-inline-block"><span class="__cf_email__"
+                                    data-cfemail="9ff6f1f9f0dff2e6fbf0f2fef6f1b1fcf0f2">info@mydomain.com</span></span></a>
+                    </div>
+                    <div class="col-6 col-lg-3 text-right">
+                        <a href="{% url "teacherlogin" %}" class="small mr-3" style="text-decoration: none;">
+                            <span class="icon-lock"></span>
+                            Log In
+                        </a>
+                        <a href="{% url "studentsignup" %}" class="small" style="text-decoration: none;">
+                            <span class="icon-person"></span>
+                            Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-nav js-sticky-header">
+            <div class="container position-relative">
+                <div class="site-navigation text-center">
+                    <a href="index.html" class="logo menu-absolute m-0" style="text-decoration: none;">TrackYourClass<span class="text-primary">.</span></a>
+                    <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <!-- <li class="has-children">
+                            <a href="#">Dropdown</a>
+                            <ul class="dropdown">
+                                <li><a href="elements.html">Elements</a></li>
+                                <li class="has-children">
+                                    <a href="#">Menu Two</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Sub Menu One</a></li>
+                                        <li><a href="#">Sub Menu Two</a></li>
+                                        <li><a href="#">Sub Menu Three</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Menu Three</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="{% url "teacherlogin" %}" style="text-decoration: none;">Admin</a></li>
+                        <li><a href="{% url "teacherlogin" %}" style="text-decoration: none;">Teacher</a></li>
+                        <li><a href="{% url "teacherlogin" %}" style="text-decoration: none;">Student</a></li>
+                        <li><a href="#" style="text-decoration: none;">About</a></li>
+                        <li><a href="{% url "notice" %}" style="text-decoration: none;">Notice</a></li>
+                    </ul>
+                    <a href="{% url "teacherlogin" %}" class="btn-book btn btn-primary btn-sm menu-absolute">Login Now</a>
+                    <a href="#"
+                        class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
+                        data-toggle="collapse" data-target="#main-navbar">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="untree_co-hero overlay" style="background-image: url({% static 'images/college.jpg'%});">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12">
+                    <div class="row justify-content-left">
+                        <div class="col-lg-6 text-center align-self-center order-lg-2">
+                            <!--<a href="https://vimeo.com/342333493" data-fancybox class="video-play-btn"
+                                data-aos="fade-up" data-aos-delay="400">
+                                <span class="icon-play"></span>
+                            </a> -->
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-left">
+                            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Empower Your Education: TrackYourClass </h1>
+                            <div class="mb-5 text-white desc mx-" data-aos="fade-up" data-aos-delay="200">
+                                <p>Where Students Thrive, Teachers Inspire, and Success Unfolds. Embrace Knowledge, Empower Growth, and Transform Your Educational Experience!</p>
+                            </div>
+                            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href={% url "studentsignup" %}
+                                    class="btn btn-primary">Register Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="untree_co-section py-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="block-v1 color-1" data-aos="fade-up" data-aos-delay="0">
+                        <a href="{% url "adminlogin" %}" style="text-decoration: none;">
+                        <span class="flaticon-admin"></span>
+                        <h3>Admin</h3>
+                        <p> Approve teachers, unlock student potential. Navigate records, attendance, and marks—shaping a thriving academic ecosystem with TrackYourClass.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="block-v1 color-2" data-aos="fade-up" data-aos-delay="100" >
+                        <a href="{% url "teacherlogin" %}" style="text-decoration: none;">
+                        <span class="flaticon-teacher"></span>
+                        <h3>Teacher</h3>
+                        <p>Teacher's Mastery Unleashed: In your hands, marks become milestones, attendance shapes engagement, and every class is a canvas of inspiration.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="block-v1 color-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="{% url "studentlogin" %}" style="text-decoration: none;">
+                        <span class="flaticon-student"></span>
+                        <h3>Student</h3>
+                        <p>Students, Ignite Your Potential: TrackYourClass unveils your academic journey—attendance, marks, and growth in one platform. Your success story starts here!</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="untree_co-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <h2 class="line-bottom text-center mb-4">What We Offer</h2>
+                    <p>Embrace challenges as opportunities, for within each obstacle lies the potential for growth, success, and self-discovery.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature">
+                        <span class="icon-music_note color-1"></span>
+                        <h3>Attendance Management</h3>
+                        <p>Streamline attendance tracking for students, ensuring a smooth and efficient educational experience in our Attendance Management System.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature">
+                        <span class="icon-calculator color-2"></span>
+                        <h3>Mark Management</h3>
+                        <p>Empower educators to assess and assign marks effortlessly, fostering a dynamic academic environment within our Mark Management System.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature">
+                        <span class="icon-leanpub color-3"></span>
+                        <h3>Teacher Announcement</h3>
+                        <p>Echoing vital information across academic landscapes, our Announcement System cultivates seamless communication, uniting educators and students effortlessly.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100&quot;">
+                    <div class="feature">
+                        <span class="icon-book color-4"></span>
+                        <h3>Notice System</h3>
+                        <p>Within the realm of communication, our Notice System delivers crucial information, bridging gaps and fostering a connected educational community.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature">
+                        <span class="icon-change_history color-5"></span>
+                        <h3>Routine Mastery</h3>
+                        <p>Empower administrators to craft dynamic class routines, fostering organized learning environments, easily accessible by both teachers and students.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature">
+                        <span class="icon-class color-6"></span>
+                        <h3>Performance Analysis</h3>
+                        <p>Elevate educational outcomes with our Performance Analysis feature, providing in-depth insights into student progress, fostering continuous improvement and success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="untree_co-section pt-0 bg-img overlay" style="background-image: url({% static 'images/garudgaction.jpg' %});">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-lg-7">
+                    <h2 class="text-white mb-3" data-aos="fade-up" data-aos-delay="0">Education for Tomorrow's Leaders
+                    </h2>
+                    <p class="text-white h5 mb-4" data-aos="fade-up" data-aos-delay="100">Embrace challenges, learn from setbacks, and persist—your journey to success is shaped by resilience and determination.</p>
+                    <p><a href="{% url "studentsignup" %}" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Enroll Now</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="untree_co-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5 mb-5">
+                    <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">At TrackYourClass, we champion educational excellence through innovative solutions. Our dedicated team collaborates to create user-centric platforms, empowering educators and students for a dynamic learning future.</p>
+                    <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
+                        <li>Separated they live</li>
+                        <li>Bookmarksgrove right at the coast</li>
+                        <li>large language ocean</li>
+                    </ul>
+                    <div class="row count-numbers mb-5">
+                        <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                            <span class="counter d-block"><span data-number="4000">0</span><span>+</span></span>
+                            <span class="caption-2">Students</span>
+                        </div>
+                        <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <span class="counter d-block"><span data-number="49">0</span><span></span></span>
+                            <span class="caption-2">Teachers</span>
+                        </div>
+                        <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <span class="counter d-block"><span data-number="12">0</span><span></span></span>
+                            <span class="caption-2">Awards</span>
+                        </div>
+                    </div>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        <a href="#" class="btn btn-primary">Admission</a>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-1"></div>
+                    <a href="https://vimeo.com/342333493" data-fancybox class="video-wrap">
+                        <!-- <span class="play-wrap"><span class="icon-play"></span></span> -->
+                        <img src="{% static 'images/student.jpg' %}" alt="Image" class="img-fluid rounded">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="untree_co-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <h2 class="line-bottom text-center mb-4">Current News</h2>
+                    <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                        live the blind texts.</p> -->
+                </div>
+            </div>
+            <div class="row align-items-stretch">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="media-h d-flex h-100">
+                        <figure>
+                            <img src="{% static 'images/student2.png' %}" alt="Image">
+                        </figure>
+                        <div class="media-h-body">
+                            <h2 class="mb-3"><a href="#" style="text-decoration: none;">Education for Tomorrow's Leaders</a></h2>
+                            <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span> <span
+                                    class="icon-person mr-2"></span>Colorlib</div>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="media-h d-flex h-100">
+                        <figure>
+                            <img src="{% static 'images/technalogy.jpg' %}" alt="Image">
+                        </figure>
+                        <div class="media-h-body">
+                            <h2 class="mb-3"><a href="#" style="text-decoration: none;">Enroll Today For Get Futuristic Features</a></h2>
+                            <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span> <span
+                                    class="icon-person mr-2"></span>Colorlib</div>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="untree_co-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <h2 class="line-bottom text-center mb-4">Pricing</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                        live the blind texts.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="00">
+                    <div class="pricing">
+                        <div class="pricing-img mb-4"><img src="images/1x/asset-1.png" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="pricing-body">
+                            <h3 class="pricing-plan">Infant</h3>
+                            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
+                                Consonantia, there live the blind texts.</p>
+                            <div class="price"><span class="fig">$50.99</span><span>/month</span></div>
+                            <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing">
+                        <div class="pricing-img mb-4"><img src="images/1x/asset-2.png" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="pricing-body">
+                            <h3 class="pricing-plan">Toddler</h3>
+                            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
+                                Consonantia, there live the blind texts.</p>
+                            <div class="price"><span class="fig">$99.99</span><span>/month</span></div>
+                            <p><a href="#" class="btn btn-primary">Get Started</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing">
+                        <div class="pricing-img mb-4"><img src="images/1x/asset-3.png" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="pricing-body">
+                            <h3 class="pricing-plan">Lad</h3>
+                            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
+                                Consonantia, there live the blind texts.</p>
+                            <div class="price"><span class="fig">$199.99</span><span>/month</span></div>
+                            <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="untree_co-section">
+        <div class="bg-2"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="0">
+                    <h3 class="line-bottom mb-4">Testimonials</h3>
+                    <div class="owl-carousel wide-slider-testimonial">
+                        <div class="item">
+                            <blockquote class="block-testimonial">
+                                <p>
+                                    &ldquo;As the visionary founder and CEO of Tech-Vision, Arindam Karmakar leads with passion, driving innovation to revolutionize education. [He/She] envisions a future where technology empowers seamless, transformative learning experiences for all.&rdquo;</p>
+                                <div class="author">
+                                    <img src="{% static 'images/ceo.jpg' %}" alt="Free template by TemplateUX">
+                                    <h3>Arindam Karmakar</h3>
+                                    <p class="position">CEO, Founder</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="item">
+                            <blockquote class="block-testimonial">
+                                <p>
+                                    &ldquo;When she reached the first hills of the Italic Mountains, she had a last view
+                                    back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village
+                                    and the subline of her own road, the Line Lane. Pityful a rethoric question ran over
+                                    her cheek, then she continued her way.&rdquo;</p>
+                                <div class="author">
+                                    <img src="{% static 'images/designer.jpg' %}" alt="Free template by TemplateUX">
+                                    <h3>Priyam Mukherjee</h3>
+                                    <p class="position">Designer at Facebook</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="item">
+                            <blockquote class="block-testimonial">
+                                <p>
+                                    &ldquo;A small river named Duden flows by their place and supplies it with the
+                                    necessary regelialia. It is a paradisematic country, in which roasted parts of
+                                    sentences fly into your mouth.&rdquo;</p>
+                                <div class="author">
+                                    <img src="{% static 'images/pdesigner.jpg' %}" alt="Free template by TemplateUX">
+                                    <h3>Sourabh Paramanik</h3>
+                                    <p class="position">Product Designer at Twitter</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="line-bottom mb-4">Why Choose Us</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                        live the blind texts. </p>
+                    <div class="custom-accordion" id="accordion_1">
+                        <div class="accordion-item">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Good
+                                    Teachers and Staffs</button>
+                            </h2>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion_1">
+                                <div class="accordion-body">
+                                    <div class="d-flex">
+                                        <div class="accordion-img mr-4">
+                                            <img src="{% static 'images/about.jpg' %}" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia
+                                                and Consonantia, there live the blind texts. </p>
+                                            <p>Separated they live in Bookmarksgrove right at the coast of the
+                                                Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="accordion-item">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We
+                                    Value Good Characters</button>
+                            </h2>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordion_1">
+                                <div class="accordion-body">
+                                    <div class="d-flex">
+                                        <div class="accordion-img mr-4">
+                                            <img src="images/about_2.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia
+                                                and Consonantia, there live the blind texts. </p>
+                                            <p>Separated they live in Bookmarksgrove right at the coast of the
+                                                Semantics, a large language ocean.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">Your Children are Safe</button>
+                            </h2>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion_1">
+                                <div class="accordion-body">
+                                    <div class="d-flex">
+                                        <div class="accordion-img mr-4">
+                                            <img src="images/about_1.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div>
+                                            <p>When she reached the first hills of the Italic Mountains, she had a last
+                                                view back on the skyline of her hometown Bookmarksgrove, the headline of
+                                                Alphabet Village and the subline of her own road, the Line Lane.</p>
+                                            <p>Pityful a rethoric question ran over her cheek, then she continued her
+                                                way.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mr-auto">
+                    <div class="widget">
+                        <h3>About Tech-Vision<span class="text-primary">.</span> </h3>
+                        <p>Passionate team, innovative solutions, and client-centric approach define our company's commitment to excellence and success in every endeavor.</p>
+                    </div>
+                    <div class="widget">
+                        <h3>Connect</h3>
+                        <ul class="list-unstyled social">
+                            <li><a href="https://www.instagram.com/always_arindam/"><span class="icon-instagram" style="text-decoration: none;"></span></a></li>
+                            <li><a href="https://twitter.com/Arindam_K2"><span class="icon-twitter" style="text-decoration: none;"></span></a></li>
+                            <li><a href="https://www.facebook.com/arindam.karmakar.5688/"><span class="icon-facebook" style="text-decoration: none;"></span></a></li>
+                            <li><a href="https://www.linkedin.com/in/arindam-karmakar-226989234/"><span class="icon-linkedin" style="text-decoration: none;"></span></a></li>
+                            <li><a href="#"><span class="icon-pinterest" style="text-decoration: none;"></span></a></li>
+                            <li><a href="#"><span class="icon-dribbble" style="text-decoration: none;"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 ml-auto">
+                    <div class="widget">
+                        <h3>Projects</h3>
+                        <ul class="list-unstyled float-left links">
+                            <li><a href="#"style="text-decoration: none;">Web Design</a></li>
+                            <li><a href="#"style="text-decoration: none;">Django</a></li>
+                            <li><a href="#"style="text-decoration: none;">HTML5</a></li>
+                            <li><a href="#"style="text-decoration: none;">CSS3</a></li>
+                            <li><a href="#"style="text-decoration: none;">jQuery</a></li>
+                            <li><a href="#"style="text-decoration: none;">Bootstrap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h3>Gallery</h3>
+                        <ul class="instafeed instagram-gallery list-unstyled">
+                            <li><a class="instagram-item" href="{% static 'images/g1.jpg' %}" data-fancybox="gal"><img
+                                        src="{% static 'images/g1.jpg' %}" alt width="72" height="72"></a>
+                            </li>
+                            <li><a class="instagram-item" href="{% static 'images/g2.jpg' %}" data-fancybox="gal"><img
+                                        src="{% static 'images/g2.jpg' %}" alt width="72" height="72"></a>
+                            </li>
+                            <li><a class="instagram-item" href="{% static 'images/g3.jpg' %}" data-fancybox="gal"><img
+                                        src="{% static 'images/g3.jpg' %}" alt width="72" height="72"></a>
+                            </li>
+                            <li><a class="instagram-item" href="{% static 'images/g4.jpg' %}" data-fancybox="gal"><img
+                                        src="{% static 'images/g4.jpg' %}" alt width="72" height="72"></a>
+                            </li>
+                            <li><a class="instagram-item" href="{% static 'images/g5.jpg' %}" data-fancybox="gal"><img
+                                        src="{% static 'images/g5.jpg' %}" alt width="72" height="72"></a>
+                            </li>
+                            <li><a class="instagram-item" href="{% static 'images/g6.jpg' %}" data-fancybox="gal"><img
+                                        src="{% static 'images/g6.jpg' %}" alt width="72" height="72"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h3>Contact</h3>
+                        <address>Jamuria, Asansol 713336</address>
+                        <ul class="list-unstyled links mb-4">
+                            <li><a href="tel://8637315079" style="text-decoration: none;">+91 8637315079</a></li>
+                            <li><a href="tel://8759742130" style="text-decoration: none;">+91 8637315079</a></li>
+                            <li><a href="/cdn-cgi/l/email-protection#adc4c3cbc2edc0d4c9c2c0ccc4c383cec2c0" style="text-decoration: none;"><span
+                                        class="__cf_email__"
+                                        data-cfemail="721b1c141d321f0b161d1f131b1c5c111d1f">akarmakar891@gmail.com</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p>
+
+                        Copyright &copy;
+                        <script data-cfasync="false"
+                            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart text-danger" aria-hidden="true"><span class="icon-heart" style="text-decoration: none;"></span></i> by <strong>Arindam</strong> <a
+                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only"><!--Loading...--></span>
+        </div>
+    </div>
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/jquery.animateNumber.min.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/jquery.fancybox.min.js"></script>
+    <script src="/static/js/jquery.sticky.js"></script>
+    <script src="/static/js/aos.js"></script>
+    <script src="/static/js/custom.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"857c1740cd558fb0","version":"2024.2.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

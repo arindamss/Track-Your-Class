@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashbord</title>
+</head>
+<body>
+    <h1>This is teacher Dashbord </h1>
+    <h2>Welcome {{teacher.first_name}}</h2>
+
+    <h3><a href="{% url 'make_attendance' teacher.id %}" style="text-decoration: none;">Took Attendance</a></h3>
+    <h3><a href="{% url 'fill_marks' teacher.id %}" style="text-decoration: none;">Fill Marks</a></h3>
+    <h3><a href="{% url 'checkAttendance_Teacher' teacher.id %}" style="text-decoration: none;">Check Attendance</a></h3>
+    <h3><a href="{% url 'studentList'%}" style="text-decoration: none;">Student List</a></h3>
+
+
+    <h3><a href="{% url 'announcement' %}" style="text-decoration: none;">Announcement</a></h3>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>

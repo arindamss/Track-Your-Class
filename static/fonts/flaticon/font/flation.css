@@ -1,0 +1,68 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 22/06/2020 05:16
+  	*/
+
+      @font-face {
+        font-family: "Flaticon";
+        src: url("./Flaticon.eot");
+        src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+             url("./Flaticon.woff2") format("woff2"),
+             url("./Flaticon.woff") format("woff"),
+             url("./Flaticon.ttf") format("truetype"),
+             url("./Flaticon.svg#Flaticon") format("svg");
+        font-weight: normal;
+        font-style: normal;
+      }
+      
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        @font-face {
+          font-family: "Flaticon";
+          src: url("./Flaticon.svg#Flaticon") format("svg");
+        }
+      }
+      
+      [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+      [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+        font-family: Flaticon;
+              speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+      
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      .flaticon-bear:before { content: "\f100"; }
+      .flaticon-baby:before { content: "\f101"; }
+      .flaticon-teach:before { content: "\f102"; }
+      .flaticon-child:before { content: "\f103"; }
+      .flaticon-certificate:before { content: "\f104"; }
+      .flaticon-draw:before { content: "\f105"; }
+
+      .flaticon-admin:before { content: url('admin.svg'); }
+      .flaticon-teacher:before { content: url('teacher.svg'); }
+      .flaticon-student:before { content: url('student.svg'); }
+      .icon-question-circle-o:before {content: url('question.svg');}
+      .icon-phone:before { content: url('call.svg');}
+      .icon-envelope:before { content: url('email.svg');}
+      .icon-lock:before { content: url('lock.svg'); }
+      .icon-person:before { content: url('person.svg');}
+      .icon-music_note:before { content: url('attendance.svg'); }
+      .icon-calculator:before { content: url('marks.svg'); }
+      .icon-leanpub:before { content: url('announcement.svg');}
+      .icon-book:before { content: url('notice.svg');}
+      .icon-change_history:before { content: url('routine.svg');}
+      .icon-class:before { content: url('performence.svg');}
+      .icon-calendar:before { content: url('calender.svg');}
+      .icon-instagram:before {content: url('instagram.svg');}
+      .icon-twitter:before {content: url('twitter.svg');}
+      .icon-facebook:before {content: url('facebook.svg');}
+      .icon-linkedin:before { content: url('linkedin.svg');}
+      .icon-pinterest:before {content: url('pinterest.svg');}
+      .icon-dribbble:before {content: url('dribbble.svg');}
+      .icon-heart:before{content: url('heart.svg');}

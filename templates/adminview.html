@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin viewport</title>
+</head>
+<body>
+    <h1>This is admin view</h1>
+
+    <ul>
+        <li>
+            <a href="/add_teacher">Add Teacher</a>
+        </li>
+        <li>
+            <a href="{% url 'admin_approve_student' %}">Approve Students</a>
+        </li>
+        <li>
+            <a href="{% url 'checkAttendance' %}">Check Attendance</a>
+        </li>
+        <li>
+            <a href="{% url 'TeacherList' %}">Teacher List</a>
+        </li>
+        <li>
+            <a href="{% url 'uploadNotice' %}">Upload Notice</a>
+        </li>
+    </ul>
+
+    <a href="/logout">
+        <button>Logout</button>
+    </a>
+
+</body>
+</html>

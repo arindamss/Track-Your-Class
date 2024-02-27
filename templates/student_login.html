@@ -1,0 +1,129 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #3498db, #e74c3c);
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      overflow: hidden;
+      width: 400px;
+      color: #333;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .login-header {
+      background-color: #2ecc71;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 32px;
+      border-bottom: 2px solid #27ae60;
+    }
+
+    .login-form {
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3e50;
+      font-size: 18px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #3498db;
+    }
+
+    .btn {
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #c0392b;
+    }
+
+    .form-footer {
+      padding: 10px;
+    }
+
+    a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+  <div class="login-container">
+    <div class="login-header">Login</div>
+    <div class="login-form">
+      <form action="#" method="post">
+        <div class="form-group">
+            <label for="Username">UserName : </label>
+                {% render_field form.username class="login" placholder="Username" %}
+            
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Password  </label>
+                {% render_field form.password class="login" placholder="Password"%}
+            
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+    <div class="form-footer">
+      Don't have an account? <a href={% url "studentsignup" %}>Sign Up</a>
+    </div>
+  </div>
+</form>
+</body>
+</html>

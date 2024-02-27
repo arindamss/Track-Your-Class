@@ -1,0 +1,79 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="first_name">First Name :        
+            <input type="text" name="first_name">
+        </label>
+        <label for="last_name" >Last Name :         
+            <input type="text" name="last_name" >
+        </label>
+        <br><br>
+        <label for="registraction_number">Registraction Number : 
+            <input type="text" name="reg_num">
+        </label>
+        <br><br>
+        <label for="username">UserName :          
+            {% render_field userForm.username placeholder="Username" %} 
+        </label>
+        <label for="password">Password :          
+            {% render_field userForm.password placeholder="Password" %}
+        </label>
+        <br><br>
+        <label for="department">Department :        
+            <select name="dept" id="id_dept">
+                {% for d in dept %}
+                    <option value="{{d.id}} ">{{d.name}}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label for="semester">Semester Enrole :   
+                {% for sem in semester %}
+                    <input type="radio" name="semester" value="{{ sem.id }}"> {{ sem.semester }} 
+                {% endfor%}
+        </label>
+        <br><br>
+        <label for="subject">Chose Subjects :    
+            <select name="sub" id="id_sub" multiple>
+                {% for s in subject %}
+                    <option value="{{s.id}}">{{s.name}}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <br>
+
+        <!-- {% render_field studentForm.first_name placeholder="First Name" %}  &nbsp; &nbsp;
+
+        {% render_field studentForm.last_name placeholder="Last Name" %} &nbsp; &nbsp;
+        <br><br>
+        {% render_field studentForm.registration_number placeholder="Registration Number" %} &nbsp; &nbsp;
+        <br><br>
+        {% render_field userForm.username placeholder="Username" %} &nbsp; &nbsp;
+
+        {% render_field userForm.password placeholder="Password" %} &nbsp; &nbsp;
+        <br><br>
+        {% render_field studentForm.department placeholder="Department" %} &nbsp; &nbsp;
+        <br><br>
+
+        {% render_field studentForm.semesters_enrolled placeholder="Student Semester" %} &nbsp; &nbsp;
+        <br><br>
+        {% render_field studentForm.subjects placeholder="Subject " %} &nbsp; &nbsp; -->
+
+
+        <br><br>
+        <button type="submit">Sign Up</button>
+        
+
+
+    </form>
+</body>
+</html>

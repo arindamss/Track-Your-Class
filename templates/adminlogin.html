@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username" ><b>Username</b>
+            <input type="text" placeholder="Enter Username" name="username" required>
+        </label>
+        <br>
+
+        <label for="password"><b>Password</b>
+            <input type="password" placeholder="Enter password" name="password" required >
+        </label>
+
+        <button type="submit">Login</button>
+ 
+    </form>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            appearance: none;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            outline: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        h2, th, td, strong {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <select name="sem_id">
+            {% for sem in semesters %}
+                <option value="{{sem.id}}">{{sem.semester}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if students %}
+        <h2>Student List For <strong>{{semester.semester}}</strong></h2>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Registration Number</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Subjects</th>
+            </tr>
+            {% for std in students %}
+                <tr>
+                    <td>{{std.first_name}}</td>
+                    <td>{{std.last_name}}</td>
+                    <td>{{std.registration_number}}</td>
+                    <td>{{std.department}}</td>
+                    <td>{{semester.semester}}</td>
+                    <td>{% for subject in std.subjects.all %}{{subject.name}}, {% endfor %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+
+</html>

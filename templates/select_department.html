@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Marks</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #3498db;
+        }
+
+        form {
+            margin-top: 20px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2c3e50;
+            display: block;
+            margin-top: 20px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Assign Marks</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <h2>Department: {{teacher.department}}</h2>
+        <h3>Semester List:</h3>
+        {% for sem in semester %}
+            <h3><a href="{% url "assign_marks" sem.id teacher.id %}">{{sem.semester}}</a></h3>
+        {% endfor %}
+    </form>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>

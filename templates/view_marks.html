@@ -1,0 +1,81 @@
+{% include "header.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Marks</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0px;
+        }
+
+        .view-marks-title {
+            color: #3498db;
+        }
+
+        .info-paragraph {
+            margin-bottom: 10px;
+        }
+
+        .marks-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .marks-table th, .marks-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .marks-table th {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .marks-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="view-marks-title">Student Information</h1>
+    <p class="info-paragraph">Name: {{ student.first_name }} {{ student.last_name }}</p>
+    <p class="info-paragraph">Department: {{ student.department }}</p>
+    <p class="info-paragraph">Semesters Enrolled: {% for semester in student.semesters_enrolled.all %}{{ semester.semester }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p class="info-paragraph">Registration Number: {{ student.registration_number }}</p>
+
+    <h2 class="view-marks-title">Marks</h2>
+    <table class="marks-table">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Semester</th>
+                <th>Marks Obtained</th>
+                <th>Date Recorded</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mark in marks %}
+                <tr>
+                    <td>{{ mark.subject.name }}</td>
+                    <td>{{ mark.semester.semester }}</td>
+                    <td>{{ mark.marks_obtained }}</td>
+                    <td>{{ mark.date_recode }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
